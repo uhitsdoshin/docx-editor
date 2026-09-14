@@ -1,5 +1,33 @@
 # @eigenpal/docx-js-editor
 
+## 2.18.0
+
+### Minor Changes
+
+- d4daf40: Customize React and Vue popups with ordinary components through `definePopup()` or with typed render callbacks. Use existing parts and draft hooks to retain automatic behavior, or disable automatic rendering for manual ownership. Includes composable Page Setup, Paragraph Options, and Field Options dialogs. Fixes #771.
+
+### Patch Changes
+
+- 90ea211: Preserve the document's scroll position and text selection when picking or typing a font size, or dismissing the font-size input with Escape. Restore the saved selection when returning focus to the editor from toolbar inputs.
+- Updated dependencies [ded420d]
+- Updated dependencies [d2d3824]
+- Updated dependencies [b5bf09f]
+- Updated dependencies [10a3d41]
+- Updated dependencies [e78dc17]
+- Updated dependencies [564182f]
+- Updated dependencies [5598465]
+- Updated dependencies [60b9163]
+- Updated dependencies [95db5eb]
+- Updated dependencies [1e36856]
+- Updated dependencies [6eb1eb4]
+- Updated dependencies [9198848]
+- Updated dependencies [2cea799]
+- Updated dependencies [f23f974]
+- Updated dependencies [90ea211]
+- Updated dependencies [040e653]
+  - @docx-editor.dev/core@2.18.0
+  - @docx-editor.dev/i18n@2.18.0
+
 ## 2.17.0
 
 ### Minor Changes

@@ -1,5 +1,33 @@
 # @docx-editor.dev/core
 
+## 2.18.0
+
+### Minor Changes
+
+- ded420d: Render Arabic text paragraphs with script-aware measurement, inherited RTL alignment, and matching caret geometry. Fixes #773.
+- 564182f: Add `customFonts()` to supply company fonts alongside packaged and Google fonts, with validation and failure reporting. Support cancellation in `loadFonts()` and custom font resolution, and match font names consistently during measurement and painting.
+- 6eb1eb4: Add an Office.js-shaped document-editing profile, dedicated API guides, and informational signature coverage for ordinary document workflows.
+  Fix batching, text preservation, structural editing, and stable refusals found through independent consumer applications and Word round-trip review.
+- 9198848: Show configured providers’ supported fonts in the searchable font dropdown without preloading their bytes. Load newly selected fonts on demand while preserving selection and undo history.
+- f23f974: Render visually RTL table columns, merged cells, borders, interaction geometry, and HTML clipboard direction in the correct order. Fixes #774.
+- 040e653: Improve Word fidelity for theme fonts, RTL numbers, floating-table passages, and narrow CJK punctuation.
+
+  Use editor-scoped fonts; `packagedFonts.install` and `installDefaultFontFaces()` are deprecated and inert, so configure app fonts separately.
+
+### Patch Changes
+
+- d2d3824: Add `activeBackground` to author styles to set the open change's highlight band per author.
+- b5bf09f: Preserve table structure and formatting when toggling checkbox content controls. Fixes #817.
+- 10a3d41: Fix automated checkbox updates to save Word symbol glyphs with the declared state font, matching editor toggles. Fixes #754.
+- e78dc17: Keep the toolbar's standard font choices available in empty and populated documents. Merge configured and document-specific fonts into that list without loading unused font bytes.
+- 5598465: Fix CJK punctuation spacing and overlap when `characterSpacingControl` enables compression. Match Word's shared punctuation seams while preserving authored spaces and advances at paragraph boundaries.
+- 60b9163: Release temporary font-discovery caches before export layout to keep large documents within constrained memory limits.
+- 95db5eb: Use the declarations shipped by bidi-js 1.1.0 and update the HarfBuzz runtime version check to 14.4.0 for harfbuzzjs 1.6.1. This fixes the declaration build and allows the upgraded text shaper to initialize. The shaping parity fixture output is unchanged apart from version metadata.
+- 1e36856: Render picture brightness and contrast with Word's transfer so washout watermarks keep a white background instead of painting a grey slab. Fixes #821.
+- 2cea799: Resolve empty East Asian theme fonts through inherited CJK language hints and supplemental theme faces. Honor the document theme language before run proofing language. Request the selected CJK candidates in live editors and exports before shaping so Chinese, Japanese, and Korean text does not measure in the Latin default face.
+- 90ea211: Preserve the document's scroll position and text selection when picking or typing a font size, or dismissing the font-size input with Escape. Restore the saved selection when returning focus to the editor from toolbar inputs.
+- @docx-editor.dev/i18n@2.18.0
+
 ## 2.17.0
 
 ### Patch Changes
